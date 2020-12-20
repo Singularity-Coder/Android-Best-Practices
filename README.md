@@ -1,5 +1,5 @@
 # Android-Best-Practices
-A list of personal best practices that I (would like to) follow while releasing the App to PlayStore!
+A list of personal best practices that I (would like to) follow while releasing the App to PlayStore! Code Snippets for software best practices like Design Patterns, Design Principles, SOLID Principles, Effective Java, etc.
 
 ## Before starting the project:
 1. Write a design doc
