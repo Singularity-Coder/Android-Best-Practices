@@ -106,7 +106,7 @@ Refer [clean code series](https://www.youtube.com/watch?v=7EmboKQH8lM) by Robert
 1. Encrypt API Auth Tokens.
 2. Use Version Control System like Git.
 3. Write good commit messages. Something I myself must follow.
-4. Squash unwanted commits. Makes it easy to track and revert to old project states.
+4. Squash unwanted commits. Makes it easy to track and revert to old project states. [squash commits](https://stackoverflow.com/questions/5189560/squash-my-last-x-commits-together-using-git).
 5. Handle user input for emoji and other special characters using custom EditText properties. 
 6. If you are targeting only english speaking users then you can limit the user input into EditTexts using the "digits" attribute to prevent users from entering unwanted characters. For example
 ```xml
