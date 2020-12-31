@@ -207,7 +207,7 @@ Glide.with(context)
 * Use Byte Type for variables like age, height, etc that do not exceed the max Byte value.
 * Always use integers or long whole numbers and not decimal number for calculating money as you dont want to round off money on large values. You will lose a ton of money that way.
 * For representing ridiculously large numbers use BigDecimal or BigInteger classes in Java and Kotlin.
-* Instead of representing large numbers this way 2000000, prefer using the scientific notation to avoid missing zeros and causing bugs. Ex: 2E8 or 2E-8 which means 2 * 10 ^ 6 or 2 * 10 ^ -6. E is an exponent. You can also use 2 * Math.pow(10, 8) to represent large numbers in a readable way. In Kotlin you can also use underscores like 2_000_000.
+* Instead of representing large numbers this way 2000000, prefer using the scientific notation to avoid missing zeros and causing bugs. Ex: 2E6 or 2E-6 which means 2 * 10 ^ 6 or 2 * 10 ^ -6. E is an exponent. You can also use 2 * Math.pow(10, 6) to represent large numbers in a readable way. In Kotlin you can also use underscores like 2_000_000.
 * Avoid nesting if statements. Instead use small functions and exit the function using the return keyword if the condition is false. This works for functions that are void or return something.
 ```Java
 public final void welcomeGuest(final int age) {
