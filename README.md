@@ -218,6 +218,7 @@ public final void welcomeGuest(final int age) {
 * Avoid switch statements in Java as they do not read well. Use the standard if-else statements.
 * Always use named parameters in Kotlin functions. It makes things super clear.
 * Use Facebook Stetho to monitor and debug network calls in your app. 
+* Use Kotlin for Android Development. You can check this link https://kotlinlang.org/docs/reference/comparison-to-java.html for more info on why we should use Kotlin over Java. However, we must cautiously use the syntax in Kotlin as it sometimes feels like it is more optimized for writing code than reading code which is done way more than writing code. Higher-order functions like run{}, with() {}, etc, introduce 2 problems which are excessive nesting statements and the other is the usage of extra brain cells where I have to consciously understand that the inner methods and fields are being called on the wrapper. In my opinion, Java is not verbose, it's just explicit. That is what makes it clear. Inference is not always clear. Writing less code doesn't necessarily mean easier to understand or clearer in meaning. So sometimes opting for more verbose routes can make things clearer in the long term as we tend to forget things easily. Slightly irrelevant but, E=mc^2 is a small equation but it has a vast amount of insight compressed in it which can be inferred. Also, not enforcing a statement separator like ";" at the end of each statement makes the code harder to read. In my opinion, every language must have some sort of statement terminator like how English has "." period and Java has ";". These are essential for reading the content properly.
 
 ## Prefer Functional Programming Paradigm
 Functional Programming in Java by Venkat Subbramaniam
@@ -229,6 +230,8 @@ Functional Programming in Java by Venkat Subbramaniam
     1. Pass functions to functions
     2. Create functions within functions
     3. Return functions from functions
+
+## Material Design 
 
 ## Common Android Studio Keyboard Shortcuts
 Using these shortcuts is also one form of best practice as it reduces the scope of errors while doing things manually especially when refactoring.
@@ -285,6 +288,9 @@ SEARCH
 * Find next occurrence: Ctrl + F then Enter
 * Find previous occurrence: Ctrl + F then Shift Enter
 * Run Anything: Press Ctrl twice
+* Jump to line number: Ctrl + G
+* Find Stuff: Help > Actions > Analyze > Run Inspection by Name > Unused resources
+* Find Stuff: File > Refactor > Remove Unused Resources > Preview
 
 CODE SELECTIONS
 * Sequential Multiple Selections: Alt + J
@@ -303,8 +309,13 @@ OTHERS
 * Run: Ctrl + Shift + F10
 
 ## Common Git Commands
+* Get rid of or Stash unwanted changes
+* Remove commit from remote
+* Create branch n switch btw branches
+* Set commit author
 
 ## Common Vim keyboard Shortcuts
+A good alternative to IDE for practicing whiteboarding and coding. Android in Vim will probably be painful.
 
 ## Common Mac keyboard Shortcuts
 Using keyboard shortcuts is also one type of best practice as they are precise in action and most importantly quicker to use.
