@@ -218,7 +218,7 @@ public final void welcomeGuest(final int age) {
 * Avoid switch statements in Java as they do not read well. Use the standard if-else statements.
 * Always use named parameters in Kotlin functions. It makes things super clear.
 * Use Facebook Stetho to monitor and debug network calls in your app. 
-* Use Kotlin for Android Development. You can check this link https://kotlinlang.org/docs/reference/comparison-to-java.html for more info on why we should use Kotlin over Java. However, we must cautiously use the syntax in Kotlin as it sometimes feels like it is more optimized for writing code than reading code which is done way more than writing code. Higher-order functions like run{}, with() {}, etc, introduce 2 problems which are excessive nesting statements and the other is the usage of extra brain cells where I have to consciously understand that the inner methods and fields are being called on the wrapper. In my opinion, Java is not verbose, it's just explicit. That is what makes it clear. Inference is not always clear. Writing less code doesn't necessarily mean easier to understand or clearer in meaning. So sometimes opting for more verbose routes can make things clearer in the long term as we tend to forget things easily. Slightly irrelevant but, E=mc^2 is a small equation but it has a vast amount of insight compressed in it which can be inferred. Also, not enforcing a statement separator like ";" at the end of each statement makes the code harder to read. In my opinion, every language must have some sort of statement terminator like how English has "." period and Java has ";". These are essential for reading the content properly.
+* Use Kotlin for Android Development. You can check this link https://kotlinlang.org/docs/reference/comparison-to-java.html for more info on why we should use Kotlin over Java. However, we must cautiously use the syntax in Kotlin as it sometimes feels like it is more optimized for writing code than reading code which is done way more than writing code. Scope functions like run{}, with(){}, etc, introduce 2 problems which are excessive nesting statements and the other is the usage of extra brain cells where I have to consciously understand that the inner methods and fields are being called on the wrapper. In my opinion, Java is not verbose, it's just explicit. That is what makes it clear. Inference is not always clear. Writing less code doesn't necessarily mean easier to understand or clearer in meaning. So sometimes opting for more verbose routes can make things clearer in the long term as we tend to forget things easily. Slightly irrelevant but, E=mc^2 is a small equation but it has a vast amount of insight compressed in it which can be inferred. Also, not enforcing a statement separator like ";" at the end of each statement makes the code harder to read. In my opinion, every language must have some sort of statement terminator like how English has "." period and Java has ";". These are essential for reading the content properly.
 
 ## Prefer Functional Programming Paradigm
 Functional Programming in Java by Venkat Subbramaniam
@@ -321,4 +321,14 @@ A good alternative to IDE for practicing whiteboarding and coding. Android in Vi
 Using keyboard shortcuts is also one type of best practice as they are precise in action and most importantly quicker to use.
 * Use Ctrl + Backspace to delete a word.
 * Use Shift to write uppercase letters.
+
+## Useful Plugins
+* [AI Autocomplete](https://plugins.jetbrains.com/plugin/12798-tabnine-ai-autocomplete-javascript-c-python-ruby-rust-go-php--)
+* [Protocol Buffer Editor](https://plugins.jetbrains.com/plugin/14004-protocol-buffer-editor)
+* [JSON to Kotlin Class](https://plugins.jetbrains.com/plugin/9960-json-to-kotlin-class-jsontokotlinclass-)
+* [Inline blame for Git](https://plugins.jetbrains.com/plugin/7499-gittoolbox)
+
+## Online Tools
+* [JSON to Kotlin Class](https://www.json2kotlin.com/)
+* [JSON to POJO Class](http://www.jsonschema2pojo.org/)
 
