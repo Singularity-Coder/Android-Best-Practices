@@ -1,7 +1,7 @@
 # Android-Best-Practices
 A list of personal best practices that I (would like to) follow while releasing the App to PlayStore! Code Snippets for software best practices like Design Patterns, Design Principles, SOLID Principles, Effective Java, etc.
 
-## Before starting the project:
+## Before starting the project
 * Write a design doc
 * Describe what you will build
 * What feature requirements are
@@ -9,6 +9,26 @@ A list of personal best practices that I (would like to) follow while releasing 
 * Which functions you will need
 * What classes you will need
 * What Data Structures you will need
+
+## Before starting the project (More)
+* Add R8 optimisation to Gradle. Optimizes Java bytecode while translating Kotlin. [Link](https://www.youtube.com/watch?v=lTo03M2HzFY) 
+```Groovy 
+android {
+    buildTypes {
+        release {
+            minifyEnabled true  // R8 optimisation
+        }
+    }
+}
+```
+
+## When you are stuck
+* Where, When, What, Why, How 
+    * is it initialised.
+    * is it being called.
+    * is the data coming from.
+* Start from the view. How the data is set to the view.
+* Refactor the code to the pattern you understand.
 
 ## User Interface & Experience
 * Use Shimmer placeholder for showing the content that is being loaded.
