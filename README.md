@@ -253,6 +253,9 @@ Functional Programming in Java by Venkat Subbramaniam
 
 ## Material Design 
 
+## Useful Commands
+* View Kotlin Bytecode (View Java Code): Search Everywhere: press Shift twice -> Kotlin Bytecode -> Decompile
+
 ## Common Android Studio Keyboard Shortcuts
 Using these shortcuts is also one form of best practice as it reduces the scope of errors while doing things manually especially when refactoring.
 
