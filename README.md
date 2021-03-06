@@ -239,6 +239,7 @@ public final void welcomeGuest(final int age) {
 * Always use named parameters in Kotlin functions. It makes things super clear.
 * Use Facebook Stetho to monitor and debug network calls in your app. 
 * Use Kotlin for Android Development. You can check this link https://kotlinlang.org/docs/reference/comparison-to-java.html for more info on why we should use Kotlin over Java. However, we must cautiously use the syntax in Kotlin as it sometimes feels like it is more optimized for writing code than reading code which is done way more than writing code. Scope functions like run{}, with(){}, etc, introduce 2 problems which are excessive nesting statements and the other is the usage of extra brain cells where I have to consciously understand that the inner methods and fields are being called on the wrapper. In my opinion, Java is not verbose, it's just explicit. That is what makes it clear. Inference is not always clear. Writing less code doesn't necessarily mean easier to understand or clearer in meaning. So sometimes opting for more verbose routes can make things clearer in the long term as we tend to forget things easily. Slightly irrelevant but, E=mc^2 is a small equation but it has a vast amount of insight compressed in it which can be inferred. Also, not enforcing a statement separator like ";" at the end of each statement makes the code harder to read. In my opinion, every language must have some sort of statement terminator like how English has "." period and Java has ";". These are essential for reading the content properly.
+* If you want to know the syntax well, use a text editor instead of an IDE and use the terminal to build and install the project.
 
 ## Prefer Functional Programming Paradigm
 Functional Programming in Java by Venkat Subbramaniam
@@ -256,25 +257,44 @@ Functional Programming in Java by Venkat Subbramaniam
 ## Useful Commands
 * View Kotlin Bytecode (View Java Code): Search Everywhere: press Shift twice -> Kotlin Bytecode -> Decompile
 
-## Common Android Studio Keyboard Shortcuts
-Using these shortcuts is also one form of best practice as it reduces the scope of errors while doing things manually especially when refactoring.
+## Faster Gradle Builds
+* Use terminal in Android Studio to perform the build.
+```
+./gradlew installDebug
+```
+* In debug mode `minifyEnabled false` and `shrinkResources false`.
+```Groovy
+debug {
+    minifyEnabled false 
+    shrinkResources false
+}
+```
 
-CODE APPEARANCE
+## Common Android Studio Keyboard Shortcuts
+Using these shortcuts is also one form of best practice as it reduces the scope of errors while doing things manually especially when refactoring.  
+
+**Refactoring**
+* Rename: Shift + F6
+* Extract Variables: Ctrl + Alt + V
+* Extract Method: Ctrl + Alt + M
+* Refactoring Menu (Loads of other refactoring options): Ctrl + Alt + Shift + T
 * To move methods up and down: ctrl + shift + up or down
 * To move lines up and down: alt + shift + up or down
 * Duplicate lines: ctrl + d
 * Delete lines: ctrl + x
 * Comment lines: ctrl + /
+* Format Code: Cmd + Alt + L
+* See Format Settings: Cmd + Alt + Shift + L
+
+**Code Appearance**
 * Collapse function block: Ctrl + Numpad +
 * Expand function block:  Ctrl + Numpad -
 * Collapse all function blocks: Ctrl + Shift + Numpad +
 * Expand all function blocks: Ctrl + Shift + Numpad -
-* Format Code: Cmd + Alt + L
-* See Format Settings: Cmd + Alt + Shift + L
 
-CODE SUGGESTIONS
+**Code Suggestions**
 * Code suggestion: Ctrl + Space
-* Extended Code suggestion: 2 times - Ctrl + Space
+* Extended Code suggestion, 2 times: Ctrl + Space
 * Smart Type Suggestions: Ctrl + Shift + Space
 * Context Suggestions (even for errors): Alt + Enter
 * Show method signature or parameter info: Ctrl + P
@@ -286,7 +306,7 @@ CODE SUGGESTIONS
 * Show usages (shows all places we used that): Ctrl + Alt+ F7
 * Navigate to Source: Ctrl + B
 
-CODE COMPLETION
+**Code Completion**
 * Replace code completion: press Tab after Ctrl + Space and selection
 * Code completion: Ctrl + Shift + Enter
 * Postfix code completion: Press . (Period)
@@ -294,7 +314,7 @@ CODE COMPLETION
 * Wrap/Surround like surround with try/catch/finally etc: Ctrl + Alt + T
 * UnWrap say try/catch block: Ctrl + Shift + Delete
 
-SEARCH
+**Search**
 * Search Everywhere: press Shift twice
 * Search Actions: Ctrl + Shift + A
 * Search Classes: Ctrl + N - To search for library implementations as well filter from "Project Files" to "All Places"
@@ -315,19 +335,13 @@ SEARCH
 * Find Stuff: Help > Actions > Analyze > Run Inspection by Name > Unused resources
 * Find Stuff: File > Refactor > Remove Unused Resources > Preview
 
-CODE SELECTIONS
+**Code Selections**
 * Sequential Multiple Selections: Alt + J
 * Sequential Multiple De-Selections: Alt + Shift + J
 * Select All Occurrences in the file: Ctrl + Alt + Shift + J
 * Expand or shrink code selection: ctrl + w or ctrl + shift + w
 
-REFACTORING
-* Rename: Shift + F6
-* Extract Variables: Ctrl + Alt + V
-* Extract Method: Ctrl + Alt + M
-* Refactoring Menu (Loads of other refactoring options): Ctrl + Alt + Shift + T
-
-OTHERS
+**Others**
 * Hide tool window: Shift + Esc
 * Run: Ctrl + Shift + F10
 
@@ -346,7 +360,6 @@ Using keyboard shortcuts is also one type of best practice as they are precise i
 * Use Shift to write uppercase letters.
 
 ## Useful Plugins
-* [AI Autocomplete](https://plugins.jetbrains.com/plugin/12798-tabnine-ai-autocomplete-javascript-c-python-ruby-rust-go-php--)
 * [Protocol Buffer Editor](https://plugins.jetbrains.com/plugin/14004-protocol-buffer-editor)
 * [JSON to Kotlin Class](https://plugins.jetbrains.com/plugin/9960-json-to-kotlin-class-jsontokotlinclass-)
 * [Inline blame for Git](https://plugins.jetbrains.com/plugin/7499-gittoolbox)
