@@ -368,3 +368,9 @@ Using keyboard shortcuts is also one type of best practice as they are precise i
 * [JSON to Kotlin Class](https://www.json2kotlin.com/)
 * [JSON to POJO Class](http://www.jsonschema2pojo.org/)
 
+## Temporary Solutions
+* If you are using "Tabs" instead of "Windows" in Mac OS Big Sur, then Android Studio pop-ups and windows streach and get stuck. Open Terminal and use this command: [Link](https://stackoverflow.com/questions/64827350/android-studio-4-1-1-macos-full-screen-error)
+```
+defaults write com.google.android.studio AppleWindowTabbingMode manual
+```
+
