@@ -931,9 +931,20 @@ defaults write com.google.android.studio AppleWindowTabbingMode manual
 
 ## References
 1. https://sourcemaking.com/
-2. https://www.youtube.com/watch?v=lTo03M2HzFY
-3. https://www.youtube.com/watch?v=7EmboKQH8lM
+2. [D8, R8 and enums - Kotlin Vocabulary](https://www.youtube.com/watch?v=lTo03M2HzFY)
+3. [Clean Code - Uncle Bob / Lesson 1](https://www.youtube.com/watch?v=7EmboKQH8lM)
 4. https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book.html
 5. https://kotlinlang.org/docs/home.html
 6. https://www.amazon.in/Functional-Programming-Java-Venkat-Subramaniam/dp/1937785467
+7. https://android.jlelse.eu/magic-lies-here-statically-typed-vs-dynamically-typed-languages-d151c7f95e2b
+8. https://byjus.com/maths/number-system
+9. http://www.asciitable.com
+10. https://kb.iu.edu/d/ackw
+11. https://www.eso.org/~ndelmott/ascii.html
+12. [Programming Words You Should Know](https://www.youtube.com/watch?v=es4DYTFdqlg)
+13. [10 Useful Technical Terms](https://www.youtube.com/watch?v=HtEzuAqWmoE)
+14. https://www.sciencedirect.com/topics/computer-science/alphanumeric-character
+15. [How to Kotlin - from the lead Kotlin language designer (Google I/O '18)](https://www.youtube.com/watch?v=6P20npkvcb8)
+16. [KotlinConf 2018 - Creating Internal DSLs in Kotlin by Venkat Subramaniam](https://www.youtube.com/watch?v=JzTeAM8N1-o)
+17. [Computer Basics 4: Decoding a Binary Number](https://www.youtube.com/watch?v=xXLj5MbrI44&list=PLWKjhJtqVAbmfoj2Th9fvxhHIeqFO7wOy&index=4)
 
