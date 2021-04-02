@@ -1,3 +1,4 @@
+![alt text](https://github.com/Singularity-Coder/Android-Best-Practices/blob/main/assets/banner_android_best_practices.png)
 # Android-Best-Practices
 A list of personal best practices that I (would like to) follow while releasing the App to PlayStore! Code Snippets for software best practices like Design Patterns, Design Principles, SOLID Principles, Effective Java, etc.
 
