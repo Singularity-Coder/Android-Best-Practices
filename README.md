@@ -1,5 +1,5 @@
 ![alt text](https://github.com/Singularity-Coder/Android-Best-Practices/blob/main/assets/banner_android_best_practices.png)
-# Android-Best-Practices
+# Android Best Practices
 A list of personal best practices that I (would like to) follow while releasing the App to PlayStore! Code Snippets for software best practices like Design Patterns, Design Principles, SOLID Principles, Effective Java, etc.
 
 
@@ -452,6 +452,10 @@ Functional Programming in Java by Venkat Subbramaniam
 * Abstract Factory 
 * Builder [Kotlin Link](https://github.com/Singularity-Coder/Android-Examples/tree/master/kotlin/KotlinBuilderPattern1)
 * Factory Method 
+    * Anything that has different types can have a factory of its own.
+    * Deals with object creation.
+    * Object creation logic is hidden to the client.
+    * Create different factories based on different specifications.
 * Object Pool
 * Prototype 
 * Singleton 
@@ -921,7 +925,12 @@ Add the 1 bit values:      64 + 8 + 2 + 1 = 75
 * **Hexadecimal to Decimal Conversion:**
 * **Octal to Decimal Conversion:**
 * **Test Driven Development (TDD):** Write the test first before building the actual feature.
-
+* **binary operator - needs 2 operands**
+* **Unary operator - single operand**
+* **Signed**
+* **Unsigned**
+* **one’s complement**
+* **2’s complement**
 
 ## Temporary Solutions
 * If you are using "Tabs" instead of "Windows" in Mac OS Big Sur, then Android Studio pop-ups and windows streach and get stuck. Open Terminal and use this command: [Link](https://stackoverflow.com/questions/64827350/android-studio-4-1-1-macos-full-screen-error)
