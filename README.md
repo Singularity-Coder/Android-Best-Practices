@@ -234,7 +234,6 @@ Glide.with(context)
 * Close soft keyboard on button presses and navigations before navigating or use Navigation Components as it handles all these minor things automatically. I have especially observed closing the soft keyboard while navigating between fragments in Navigation Components.
 * Use Builder Pattern for designing readable objects.
 * Avoid Try Catch Finally blocks while Testing/Building until u cracked the logic perfectly. Add Try Catch just to avoid unexpected behaviour. Dont build the feature using Try Catch. Else you will miss cases where the logic is not perfect and Try Catch does its job but you wont be able to figure out what went wrong. This happens when you are dealing with large code bases. 
-* Avoid Else statements. Totally unclear. 
 * Avoid passing data using shared prefs. They are not meant for direct communication. Use Intent extras in activities and bundles in Fragments as much as possible.
 * Make every variable, function and class final or non inheritable, immutable, non overridable by default. If necessary then make it mutable. 
 * Use SQLite or Room for caching complex data types. Dont use shared prefs or other simple primitive type storage systems by converting complex objects to String type using Gson and then storing them.
@@ -275,7 +274,6 @@ person?.let { _ ->
     // Even if we don't do anything with the lambda value, the use of an _ is just bad in my opinion and unfortunately Android Studio suggests that. It just doesnt read well. Once again this is a simple example used for demo but makes sense in complex code bases.
 }
 ```
-* When we refactor the code, it is often good to take suggestions from Android Studio and linting tools like sonarlint plugin for Android Studio. And that should be it. They are suggestions and not necessarily hard and fast rules. They are sometimes very subjective so blindly following them will not always lead to human readable code. The optimisations somtimes lose context and feels like the code is meant to be read by robots and not humans. So again use good sense here as well. 
 * When you  are not dealing with primitives in Java or default parameter values in Kotlin, for booleans we should use `x != true` rather than `x == false`. That way the condition never fails even if `x` is `null`.
 * A faster way to build a feature is by preparing static dummy data. This is so obvious but sometimes when you are dealing with APIs and external data sources, you get caught up in that and develop a sense of dependency on the need for an external data source to build the feature and delay the process. So approximately prepare dummy data, create the views and finish the feature first. Then operate on real data.
 * Android Studio seems to break a long line of code into sensible multi-line code blocks. This is great but it is not always good. Sure it makes the code readable and even reduces mistakes in some cases but not all code blocks need that much attention all the time. It is good to get a sense of what a method does in a single glance. That is only possible if the method is short and fits the standard laptop screen size. Small methods is something even Robert C Martin emphasizes however he also says that making the reader scroll horizontally to read the code is rude to the reader. So it is a bit contradictory. But think of Toast messages. We don't need to know every parameter in the Toast message all the time. We know the only important thing in a Toast is the message text. One line is more than enough for that even if it "crosses the max code length per line" in Android Studio. To change that, go to **Settings -> Editor -> Code Style -> Hard wrap at -> xxx columns**.
@@ -283,6 +281,36 @@ person?.let { _ ->
 * Try to avoid creating too many variables as they allocate memory and can be a potential memory waste. Consequently, try using `lazy initialisation` to only allocate memory on first use.
 * Always set explicit types for every field. It is good for Java interoperability.
 
+## Automate String Generation & Segregation based on Locale
+https://github.com/rogermolas/csv-localizer
+
+1. Paste these commands in Terminal. Install Homebrew. If you have Homebrew already then jump to step 3.
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+2. Install missing packages, if any
+```
+brew install wget
+```
+3. Install CSV Initializer
+```
+brew tap rogermolas/csv-localizer
+brew install csv-localizer
+```
+4. Create a template in a new Google Sheet and download the file in CSV format
+```
+AndroidStringName | English | Hindi | French (fr) | German (de) | Russian
+                  |         |       |             |             |        
+                  |         |       |             |             |        
+```
+5. Use this command in the terminal. /Users/hitheshv/Desktop/csv/ is the “csv” folder path on Mac’s desktop which is where you add your CSV file. The filename doesn't matter. /Users/hitheshv/Desktop is the destination path where the output will be generated.
+```
+csv-localizer -p android -i /Users/hitheshv/Desktop/csv/ -o /Users/hitheshv/Desktop
+```
+
+## File Path Escape Sequences
+* To escape a space in the string use \\ or %20. Ex: Hello\\ World  OR Hello%20World
+* Valid escape sequences are \b \t \n \f \r \" \' \\
 
 ## Prefer Functional Programming Paradigm
 Functional Programming in Java by Venkat Subbramaniam
@@ -802,135 +830,6 @@ Using keyboard shortcuts is also one type of best practice as they are precise i
 * [JSON to Kotlin Class](https://www.json2kotlin.com/)
 * [JSON to POJO Class](http://www.jsonschema2pojo.org/)
 
-
-## Common Vocabulary
-* **Data:** The quantities, characters or symbols on which operations are performed by a computer, which may be stored and transmitted in the form of electrical signals and recorded on magnetic, optical or mechanical recording media.
-* **Expression:** A function with return value or a variable. They are things that have values. You assign expressions to variables.
-* **Statement:** Code with an assignment operator. They are things that have effects. You write statements to assign things to other things.
-* **Pascal Case:** KotlinCodeSnippets  
-* **Camel Case:** kotlinCodeSnippets  
-* **Snake Case:** kotlin_code_snippets 
-* **Main Function:** Entry point in our app.  
-* **Compiler:** Translates high level language to low level language that machine can understand. Also checks for syntax errors.  
-* **Run Kotlin Program:** Converts Kotlin code to Java byte code to run it on JVM. JVM further converts the Java byte code into machine code that <a href=""></a> platform like Mac or Windows can understand.  
-* **Statically Typed Programming Language:** Type of a variable is known at compile-time. So once variable is declared with a type, it cannot ever be assigned to a variable of different type and doing so will result in a type error at compile-time. So you CANNOT build the app without fixing the bugs. Fast & Efficient. Ex: Kotlin, Java, C, C++, etc.  
-* **Dynamically Typed Programming Language:** Type of a variable is known at run-time. Variables are bound to objects at run-time. You can assign a variable with a different an Integer type even if it was initially assigned String type. So you CAN build the app without fixing the bugs. Slow & less optimized but has its own advantages like dynamic dispatch, late binding, down-casting, reflection. Ex: JavaScript, Objective-C, PHP, Python, Ruby, Lisp, etc.  
-* **Type Checking:** The process of verifying and enforcing the constraints of types.  
-* **Static check:** Type check happening at compile-time.  
-* **Dynamic check:** Type check happening at run-time.  
-* **Strongly-typed language:** Variables are bound to specific data types, and will result in type errors if types do not match up as expected in the expression - regardless of when type checking occurs. Ex: Java, Python, etc.  
-* **Weakly-typed language:** Variables are not bound to a specific data type; they still have a type, but type safety constraints are lower compared to strongly-typed languages. Ex: PHP, C, C++, etc.  
-* **Top-Level function:** A function that is not enclosed in a class.  
-* **Double Type:** Double-precision floating-point. More exact than Float numbers.
-* **Number System:** A way of representing numbers. The value of any digit in a number can be known if we know:
-    1. The Digit 
-    2. Its position in the number
-    3. The base/radix of the number system
-* **Radix/Base:** Available numbers in a number system (or) numbers used in a system (or) number of digits used in a positional number system. Ex: base-10 numbering system or decimal numbers (0,1,2,3,4,5,6,7,8, and 9) is most common. So the radix/base for Decimal numbers is 10. Computers deal with base-2 or binary which only deals with numbers 0 and 1. So for binary numbers the radix/base is 2.
-* **Types of base or Types of Number Systems:** 
-    1. Base-2 (Binary): Uses only 0, 1
-    2. Base-8 (Octal): Uses only 0, 1, 2, 3, 4, 5, 6, 7
-    3. Base-10 (Decimal): Uses only 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
-    4. Base-16 (Hexadecimal): Uses only 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F
-* **Signed Integer:** Whole range of integers negative, zero and positive integers. Ex: -∞...-3, -2, -1, 0, 1, 2, 3...∞
-* **Unsigned Integer:** Non-negative integers including 0. Ex: 0, 1, 2, 3...∞
-* **ASCII:** American Standard Code for Information Interchange.
-* **ASCII Characters:** Start from 0 to 127. Consist of commonly used characters like upper and lower case english letters, numbers, etc. Each character is exactly 8 bits or 1 byte.
-* **Extended ASCII Characters:** Start from 128 to 256. Extended set of ASCII characters that include famous currency symbols, etc.
-* **Unicode Characters:** Emojis, Math symbols, Spoken Language characters, etc.
-* **ISO:** International Standards Organization.
-* **1 bit:** A bit is a binary digit. It can hold either a 0 value or 1 value.
-* **1 byte:** 8 bits form a byte. It can store a single ASCII character like 'C'. Since each bit can hold either a 0 or 1, the character 'C' will have 01000011 values where each bit out of the 8 holds a 0 or 1.
-* **1 kilobyte (KB):** 1024 bytes form a kilobyte.
-* **1 megabyte (MB):** 1024 kilobytes form a megabyte.
-* **1 gigabyte (GB):** 1024 megabytes form a gigabyte.
-* **1 terabyte (TB):** 1024 gigabytes form a terabyte.
-* **1 petabyte (PB):** 1024 terabytes form a petabyte.
-* **1 exabyte (EB):** 1024 petabytes form a exabyte.
-* **1 zettabyte (ZB):** 1024 exabytes form a zettabyte.
-* **1 yottabyte (YB):** 1024 zettabytes form a yottabyte.
-* **1 Mbps:** Lowercase 'b' means 1 megabits per second. Broadband connection terminology.
-* **1 MBps:** Uppercase 'B' means 1 megabytes per second. Broadband connection terminology.
-* **Operator:** A symbol that tells the compiler or interpreter to perform specific mathematical, relational or logical operation and produce a result. Ex: +, -, &&, ||, etc.
-* **Operand:** The element(s) we are operating on.
-* **Unary Operator:** Operate on a single operand or element. Ex: a++
-* **Binary Operator:** Operate on 2 operands or elements. Ex: a + b
-* **Ternary Operator:** Operate on 3 operands or elements. Ex: a ? b : c
-* **Infix Operator:** Operator is inbetween 2 operands. Like the + in a + b
-* **Prefix Operator:** Operator to the left of an operand. Like ++a
-* **Postfix Operator:** Operator to the right of an operand. Like a++
-* **Operator Overloading or ad hoc polymorphism:** A specific case of polymorphism, where different operators have different implementations depending on their arguments. Ex: + can behave like -, etc.
-* **Module:** A module encapsulates complex functionality away from user, provides a well defined interface for a user and it should have a plug-and-play setup.
-* **Abstract Data Type:** A set of rules on how something should behave and operate. Ex: A linked list can implement the stack abstract data type (ADT).
-* **Data Structure:** A particular way of organizing data. Its a concrete implementation of an Abstract Data Type.
-* **Abstract in Programming:** Set of rules that must be followed. Like an interface. No implementation. Like an idea that is not tangible until implemented.
-* **Client/Server Model:** Client makes a request. Server responds to that request.
-* **Proxy:** Software that makes a request on behalf of Client.
-* **Application Programming Interface (API):** Mediator software that allows 2 apps to communicate. (OR) A set of publicly exposed methods that allow access to the data layer.
-* **Software Development Kit (SDK):** Collection of APIs. Ex: To build Android Apps, you need an Android SDK.
-* **Cache:** A quicker way of accessing something. Ex: Kitchen Pantry is a cache for the grocery store. Programs currently running on a computer are cache for all the big files saved in the hard drive. Files saved on hard drive of a computer is a cache for all the things saved on the cloud.
-* **Compilation:** Converting human readable code like Java, Kotlin, Python into machine readable code.
-* **Open Device:** MacBook Pro. General purpose. Its the system.
-* **Embedded Device:** iPod. Specific purpose. Its a subset of the system.
-* **Deeply Embedded Device:** Nest thermostat. Super specific purpose. Its a subset of another subset.
-* **Middleware:** Software that acts as a bridge between an operating system or database and applications, especially on a network.
-* **Serialization:** Converting object to byte stream.
-* **Deserialization:** Converting byte stream to object.
-* **Parse:** Process of findng the meaning of a sentence by breaking it into parts that are syntactically and grammatically correct.
-* **Traversal:** Visiting each element in a data structure exactly once.
-* **Fibonacci Numbers:** Each number is the sum of the 2 preceding ones, starting from 0 and 1. Ex: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144... where 8 is a sum of 5 and 3, its preceding 2 numbers.
-* **Palindrome:** A word, number, phrase, or other sequence of characters which reads the same backward as forward, such as madam or racecar. There are also numeric palindromes, including date/time stamps using short digits 11/11/11 11:11 and long digits 02/02/2020. Refer Wikipedia.
-* **Factorial:** A function that multiplies a number by every number below it. Ex: 5!= 5 * 4 * 3 * 2 * 1 = 120. The function is used, among other things, to find the number of ways “n” objects can be arranged.
-* **Armstrong Number:** A number that is equal to the sum of cubes of its digits. Ex: 0, 1, 153, 370, 371, 407, etc. If we take 153 -> 1^3 = 1, 5^3 = 125, 3^3 = 27. So 1 + 125 + 27 = 153. 
-* **Natural Numbers (N):** Also called as Positive Integers, Counting Numbers. 1, 2, 3...∞
-* **Whole Numbers (W) or Non-Negative Integers (Z Star):** Set of Natural Numbers, plus Zero. 0, 1, 2, 3...∞
-* **Integers (Z):** Set of Negative numbers and Whole Numbers. -∞...-3, -2, -1, 0, 1, 2, 3...∞   
-* **Rational Numbers (Q):** Can be expressed as ratio of two integers. All the fractions where the top and bottom numbers are integers. The denominator cannot be 0, but the numerator can be. 1/2, 3/4, 7/2, ⁻4/3, 4/1.
-* **Unit Fractions:** If numerator of a fraction is one. 1/2, 1/3, 1/4, 1/5.
-* **Decimal Fractions:** Decimal numbers (such as 0.3,  0.32, -2.7) can be called decimal fractions, because they can be written in a fractional form (e.g., 3/10, 32/100, -27/10).
-* **Irrational Numbers (Q' or Q Prime):**
-* **Real Numbers (R):** 
-* **Complex Numbers (C):**
-* **Prime Numbers:**
-* **Composite Numbers:**
-* **Dynamic Memory Allocation:**
-* **Preprocessor:**
-* **Matrix:**
-* **2D Matrix:**
-* **3D Matrix:**
-* **Numeric Characters:** 
-* **Alphanumeric Characters:** Subsets of ASCII characters. Depends on the implementation and requirements. Some allow all ASCII characters while others use a subset of them. Generally Alphabets, Numbers and few Special characters. 0 to 9, A to Z(both uppercase and lowercase), @ # * & etc.
-* **Enumeration:** List things one by one. To count. A synonym to the verb "list". It emphasizes the fact that things are being specifically identified and listed one at a time. In mathematics and computer science, enumeration is a complete, ordered listing of all the items in a collection. Used to refer to a listing of all of the elements of a set. 
-* **Protobuf:** Protocol buffers are Google's language-neutral(any programming language), platform-neutral(any OS like Mac or Windows), extensible mechanism for serializing structured data.
-* **Encoding:** Converting or Transforming (information or an instruction) into another form.
-* **Decoding:** Converting or Translating (coded or encoded info) into an understandable form.
-* **Cipher:** Secret or disguised way of writing; a code.
-* **Callback:** You tell it to do something and it will let you know when its done.
-* **DSL:** Domain-Specific Language.
-* **Main Memory:** Random Access Memory (RAM). 
-* **Data Structure:** A way to arrange data in main memory (RAM) for efficient usage. Ex: Arrays, LinkedLists, Stacks, etc.
-* **Algorithm:** Sequence of steps that solves a problem.
-* **Database:** Collections of data stored in permanent storage that can be added, fetched, updated and deleted.
-* **Data Warehousing:** 
-* **Big Data:** 
-* **Binary to Decimal Conversion:** Binary numeral system: 1 is ON and 0 is OFF. 0s don't matter. 1s only matter so add the 2^placeValue values. So 1001011 is 75 in binary. Read from right to left.
-```
-Binary Number:             1     0     0     1     0     1     1
-Place Value:               6     5     4     3     2     1     0
-2 power Place Value:       2^6   2^5   2^4   2^3   2^2   2^1   2^0
-Solve the above:           64    32    16    8     4     2     1
-
-Add the 1 bit values:      64 + 8 + 2 + 1 = 75
-```
-* **Hexadecimal to Decimal Conversion:**
-* **Octal to Decimal Conversion:**
-* **Test Driven Development (TDD):** Write the test first before building the actual feature.
-* **binary operator - needs 2 operands**
-* **Unary operator - single operand**
-* **Signed**
-* **Unsigned**
-* **one’s complement**
-* **2’s complement**
 
 ## Temporary Solutions
 * If you are using "Tabs" instead of "Windows" in Mac OS Big Sur, then Android Studio pop-ups and windows streach and get stuck. Open Terminal and use this command: [Link](https://stackoverflow.com/questions/64827350/android-studio-4-1-1-macos-full-screen-error)
